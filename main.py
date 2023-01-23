@@ -16,11 +16,21 @@ output_file = 'db_ready_output.csv'
 if __name__ == '__main__':  
     mdfh = MerchantDataFileHandler(276, merchant_data_file_path, column_name_mappings[276])
     out_rows, out_err = mdfh.generate_output_file_contents()
+
     if out_rows:
         with open(output_file, 'w') as dbfile:
             fieldnames = out_rows[0].keys()
             writer = csv.DictWriter(dbfile, fieldnames = fieldnames)
             writer.writeheader()
             writer.writerows(out_rows)
+
+    if out_err: 
+        error_string =  mdfh.generate_error_string(out_err)
+        print(error_string)
+        writer = open("error_log.txt","w") 
+        writer.write(error_string)
+        writer.close()
+        
+
 
 
