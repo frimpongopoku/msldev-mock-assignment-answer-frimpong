@@ -9,12 +9,12 @@ import os
 
 from client_column_transforms import column_name_mappings
 from ingest import MerchantDataFileHandler
-merchant_data_file_name = '276_product_update.csv'
+merchant_data_file_name = '421_product_update.csv'
 merchant_data_file_path = os.path.join('.', 'data', merchant_data_file_name)
 output_file = 'db_ready_output.csv'
 
 if __name__ == '__main__':  
-    mdfh = MerchantDataFileHandler(276, merchant_data_file_path, column_name_mappings[276])
+    mdfh = MerchantDataFileHandler(421, merchant_data_file_path, column_name_mappings[421])
     out_rows, out_err = mdfh.generate_output_file_contents()
 
     if out_rows:
@@ -26,7 +26,6 @@ if __name__ == '__main__':
 
     if out_err: 
         error_string =  mdfh.generate_error_string(out_err)
-        print(error_string)
         writer = open("error_log.txt","w") 
         writer.write(error_string)
         writer.close()

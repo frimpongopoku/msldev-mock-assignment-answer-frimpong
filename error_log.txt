@@ -1,0 +1,22 @@
+AFFECTED PRODUCT 
+{'prod_id': 'A1', 'mktplc_prod_id': 'MA1', 'name': 'premium shaving foam', 'max_selling_price': '35.0', 'min_selling_price': '22.7', 'inventory_level': '87', 'some_new_field': '67'}
+--------------------------------------
+ERRORS 
+--------------------------------------
+1. Client Column Name: some_new_field
+Column Name at Multiply : -
+Value : 67
+Error : Could not find table mapping corresponding to (some_new_field) 
+
+
+AFFECTED PRODUCT 
+{'prod_id': 'B2', 'mktplc_prod_id': 'MB2', 'name': 'regular jelly beans', 'max_selling_price': '12.87', 'min_selling_price': '10.69', 'inventory_level': '134', 'some_new_field': None}
+--------------------------------------
+ERRORS 
+--------------------------------------
+1. Client Column Name: some_new_field
+Column Name at Multiply : -
+Value : None
+Error : Could not find table mapping corresponding to (some_new_field) 
+
+

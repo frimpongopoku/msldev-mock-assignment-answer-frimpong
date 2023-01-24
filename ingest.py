@@ -78,7 +78,6 @@ class MerchantDataFileHandler:
     def restructure(self,row): 
         item = {}
         err = []
-
         for client_column_name, value in row.items(): 
             try:
                 multiply_column_name = self.column_name_mapping[client_column_name]
@@ -105,7 +104,6 @@ class MerchantDataFileHandler:
                     "value":value,
                     "error_description":f"Could not find table mapping corresponding to ({client_column_name}) ",
                     })
-                
         return item, err
         
     
